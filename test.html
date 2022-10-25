@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <title>Date</title>
+    <style>
+        *{
+            font-family: cursive;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            border-radius: 25px;
+            opacity: 70%;
+        }
+        span h1{
+            display: inline;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+        }
+        span h4{
+            font-size: 35px;
+        }
+        span{
+            background: white;
+            opacity: 100%;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <span>
+            <h1 id="hour">Loading...</h1><h1 id="colon">&nbsp;&nbsp;</h1><h1 id="minutes"></h1><br>
+            <h4 id="date">Please Wait</h4>
+        </span>
+    </center>
+    <script>
+        alert("I am working!!!");
+        function preload(){}
+        function setup(){}
+        function draw(){
+        mon = ["January", "February","March", "April","May", "June","July", "August","September", "October","November", "December"];
+        d = ["Sun", "Mon","Tues", "Wed","Thu", "Fri","Sat"];
+        date = new Date();
+        hour = date.getHours();
+        minute = date.getMinutes();
+        month = mon[date.getMonth()];
+        day = d[date.getDay()];
+        date = date.getDate();
+        document.querySelector("#hour").innerHTML = hour;
+        document.querySelector("#minutes").innerHTML = minute;
+        document.querySelector("#date").innerHTML = day + "/" + date + "/" + month;
+        document.querySelector("#colon").innerHTML = "&nbsp;:&nbsp;";
+        }
+    </script>
+</body>
+</html>
